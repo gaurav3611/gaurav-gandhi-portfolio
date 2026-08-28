@@ -191,7 +191,7 @@ export const achievements: Achievement[] = [
 
 export const socials = [
   { label: "GitHub", href: "https://github.com/gaurav3611", icon: "gh" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/Gaurav-gandhi", icon: "li" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/gaurav-gandhi-700a8a29a/", icon: "li" },
   { label: "Email", href: "mailto:gandhigaurav1145@gmail.com", icon: "em" },
 ];
 

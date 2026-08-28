@@ -57,9 +57,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={s.label}
                 title={s.label}
-                className="w-10 h-10 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white/80 hover:bg-vermilion hover:border-vermilion hover:text-white transition-all duration-300"
+                className="w-11 h-11 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white/80 hover:bg-vermilion hover:border-vermilion hover:text-white transition-all duration-300"
               >
-                <SocialIcon name={s.icon} size={18} />
+                <SocialIcon name={s.icon} size={20} />
               </a>
             ))}
           </div>

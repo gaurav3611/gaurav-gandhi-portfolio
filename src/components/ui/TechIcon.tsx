@@ -153,7 +153,7 @@ export default function TechIcon({
         <div className="grid place-items-center" style={{ width: size, height: size }}>
           {logo}
         </div>
-        <span className="text-[11px] font-mono text-stone group-hover:text-ink transition-colors duration-300">
+        <span className="text-xs font-mono text-stone group-hover:text-ink transition-colors duration-300">
           {name}
         </span>
       </motion.div>
@@ -170,7 +170,7 @@ export default function TechIcon({
         {logo}
       </div>
       {(showLabel || true) && (
-        <span className="text-xs font-mono text-charcoal group-hover:text-ink transition-colors duration-300">
+        <span className="text-sm font-mono text-charcoal group-hover:text-ink transition-colors duration-300">
           {name}
         </span>
       )}
