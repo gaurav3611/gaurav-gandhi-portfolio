@@ -5,32 +5,32 @@ export interface TempleBackground {
   url: string;
 }
 
-// Free-to-use Japanese cherry-blossom (sakura) & nature photographs (Unsplash License).
+// Free-to-use Japanese Mount Fuji, temple & mountain photographs (Unsplash License).
 // All URLs verified to return HTTP 200 (direct Unsplash CDN).
 export const templeBackgrounds: TempleBackground[] = [
   {
     id: 0,
-    name: "Sakura & Pagoda",
-    label: "Mount Fuji · Cherry blossoms at the pagoda",
-    url: "https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1920&auto=format&fit=crop",
+    name: "Mount Fuji & Pagoda",
+    label: "Fujiyoshida · Traditional pagoda with Mount Fuji",
+    url: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1920&auto=format&fit=crop",
   },
   {
     id: 1,
-    name: "Mountain Temple with Sakura",
-    label: "Japan · Temple among the peaks",
+    name: "Mount Fuji & Lake",
+    label: "Japan · Red pagoda over still water",
     url: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1920&auto=format&fit=crop",
   },
   {
     id: 2,
-    name: "Cherry Blossom Sakura",
-    label: "Japan · Blossoms in full bloom",
-    url: "https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=1920&auto=format&fit=crop",
+    name: "Fushimi Inari Shrine",
+    label: "Kyoto · The path of a thousand torii gates",
+    url: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1920&auto=format&fit=crop",
   },
 ];
 
 // Pexels fallbacks (verified HTTP 200, direct CDN files)
 export const templeFallbacks: string[] = [
-  "https://images.pexels.com/photos/3937580/pexels-photo-3937580.jpeg?auto=compress&cs=tinysrgb&w=1920",
-  "https://images.pexels.com/photos/458597/pexels-photo-458597.jpeg?auto=compress&cs=tinysrgb&w=1920",
-  "https://images.pexels.com/photos/1714409/pexels-photo-1714409.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  "https://images.pexels.com/photos/1294886/pexels-photo-1294886.jpeg?auto=compress&cs=tinysrgb&w=1920",
 ];
