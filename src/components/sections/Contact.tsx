@@ -14,8 +14,8 @@ import { contactInfo, socialsFull } from "@/data/contact";
 
 const contactItems = [
   { label: "Email", value: contactInfo.email, href: `mailto:${contactInfo.email}`, icon: EmailIcon },
-  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone}`, icon: PhoneIcon },
-  { label: "Location", value: contactInfo.location, href: undefined, icon: LocationIcon },
+  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone.replace(/[\s-]/g, "")}`, icon: PhoneIcon },
+  { label: "Location", value: contactInfo.location, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.location)}`, icon: LocationIcon },
 ];
 
 export default function Contact() {
@@ -62,50 +62,42 @@ export default function Contact() {
               the channels below — I usually reply within a day.
             </p>
 
-            {/* Contact items */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            {/* Icon actions — no text shown, functionality preserved */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
               {contactItems.map((item) => {
                 const Wrapper = item.href ? "a" : "div";
                 return (
                   <Wrapper
                     key={item.label}
                     href={item.href}
-                    className="group relative flex flex-col items-start gap-4 bg-white border border-white/60 rounded-2xl p-5 hover:border-vermilion/50 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-300"
+                    aria-label={item.label}
+                    title={item.label}
+                    className="group relative w-14 h-14 rounded-full bg-white border border-white/60 flex items-center justify-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-ink hover:bg-vermilion hover:border-vermilion hover:text-white"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-vermilion/15 to-vermilion/5 flex items-center justify-center group-hover:from-vermilion group-hover:to-vermilion-dark group-hover:text-white transition-colors duration-300">
-                      <item.icon size={22} />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="font-mono text-[11px] text-stone uppercase tracking-[0.15em] mb-1">
-                        {item.label}
-                      </div>
-                      <div className="text-sm font-semibold text-ink break-words leading-snug">
-                        {item.value}
-                      </div>
-                    </div>
-                    {item.href && (
-                      <span className="absolute top-4 right-4 text-stone/40 group-hover:text-vermilion group-hover:translate-x-1 transition-all duration-300">
-                        →
-                      </span>
-                    )}
+                    <item.icon size={22} />
+                    <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-mono uppercase tracking-widest bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                      {item.label}
+                    </span>
                   </Wrapper>
                 );
               })}
-            </div>
 
-            {/* Socials */}
-            <div className="flex flex-wrap gap-3">
+              <span className="h-8 w-px bg-white/25" aria-hidden />
+
               {socialsFull.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 px-4 py-2.5 bg-white border border-white/60 rounded-xl hover:bg-vermilion hover:border-vermilion hover:text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+                  aria-label={s.label}
                   title={s.handle}
+                  className="group relative w-14 h-14 rounded-full bg-white border border-white/60 flex items-center justify-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-ink hover:bg-vermilion hover:border-vermilion hover:text-white"
                 >
-                  <SocialIcon name={s.icon} size={18} />
-                  <span className="text-sm font-medium">{s.label}</span>
+                  <SocialIcon name={s.icon} size={22} />
+                  <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-mono uppercase tracking-widest bg-black/80 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    {s.label}
+                  </span>
                 </a>
               ))}
             </div>
