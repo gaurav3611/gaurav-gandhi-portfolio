@@ -14,8 +14,8 @@ import { contactInfo, socialsFull } from "@/data/contact";
 
 const contactItems = [
   { label: "Email", value: contactInfo.email, href: `mailto:${contactInfo.email}`, icon: EmailIcon },
-  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone}`, icon: PhoneIcon },
-  { label: "Location", value: contactInfo.location, href: undefined, icon: LocationIcon },
+  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone.replace(/[\s-]/g, "")}`, icon: PhoneIcon },
+  { label: "Location", value: contactInfo.location, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.location)}`, icon: LocationIcon },
 ];
 
 export default function Contact() {
@@ -56,56 +56,43 @@ export default function Contact() {
               description="Let's build something great together."
             />
 
-            <p className="text-white/75 leading-relaxed font-serif mb-8 max-w-lg">
+            <p className="text-white/80 text-lg leading-relaxed font-serif mb-10 max-w-lg">
               I&apos;m always open to new opportunities, collaborations, and
               interesting conversations. Feel free to reach out through any of
               the channels below — I usually reply within a day.
             </p>
 
-            {/* Contact items */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            {/* Icon-only contact actions — evenly aligned, equal height */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8 max-w-3xl">
               {contactItems.map((item) => {
                 const Wrapper = item.href ? "a" : "div";
                 return (
                   <Wrapper
                     key={item.label}
                     href={item.href}
-                    className="group relative flex flex-col items-start gap-4 bg-white border border-white/60 rounded-2xl p-5 hover:border-vermilion/50 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-300"
+                    title={item.label}
+                    aria-label={item.label}
+                    className="group flex items-center justify-center aspect-square bg-white border border-white/60 rounded-2xl hover:border-vermilion/50 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-vermilion/15 to-vermilion/5 flex items-center justify-center group-hover:from-vermilion group-hover:to-vermilion-dark group-hover:text-white transition-colors duration-300">
                       <item.icon size={22} />
                     </div>
-                    <div className="min-w-0">
-                      <div className="font-mono text-[11px] text-stone uppercase tracking-[0.15em] mb-1">
-                        {item.label}
-                      </div>
-                      <div className="text-sm font-semibold text-ink break-words leading-snug">
-                        {item.value}
-                      </div>
-                    </div>
-                    {item.href && (
-                      <span className="absolute top-4 right-4 text-stone/40 group-hover:text-vermilion group-hover:translate-x-1 transition-all duration-300">
-                        →
-                      </span>
-                    )}
                   </Wrapper>
                 );
               })}
-            </div>
-
-            {/* Socials */}
-            <div className="flex flex-wrap gap-3">
               {socialsFull.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 px-4 py-2.5 bg-white border border-white/60 rounded-xl hover:bg-vermilion hover:border-vermilion hover:text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
-                  title={s.handle}
+                  title={s.label}
+                  aria-label={s.label}
+                  className="group flex items-center justify-center aspect-square bg-white border border-white/60 rounded-2xl hover:border-vermilion/50 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <SocialIcon name={s.icon} size={18} />
-                  <span className="text-sm font-medium">{s.label}</span>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-vermilion/15 to-vermilion/5 flex items-center justify-center group-hover:from-vermilion group-hover:to-vermilion-dark group-hover:text-white transition-colors duration-300">
+                    <SocialIcon name={s.icon} size={22} />
+                  </div>
                 </a>
               ))}
             </div>
@@ -122,7 +109,7 @@ export default function Contact() {
           >
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label className="block text-base font-medium text-ink mb-2">
                   Name *
                 </label>
                 <input
@@ -136,7 +123,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label className="block text-base font-medium text-ink mb-2">
                   Email *
                 </label>
                 <input

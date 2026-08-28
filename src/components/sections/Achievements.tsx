@@ -32,10 +32,10 @@ export default function Achievements() {
               <div className="w-12 h-12 rounded-xl bg-vermilion/10 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:bg-vermilion/20 transition-all">
                 {a.icon}
               </div>
-              <h3 className="font-display font-semibold text-lg text-ink mb-2 leading-tight">
+              <h3 className="font-display font-semibold text-xl text-ink mb-2 leading-tight">
                 {a.title}
               </h3>
-              <p className="text-sm text-charcoal leading-relaxed font-serif">
+              <p className="text-base text-charcoal leading-relaxed font-serif">
                 {a.subtitle}
               </p>
             </motion.div>

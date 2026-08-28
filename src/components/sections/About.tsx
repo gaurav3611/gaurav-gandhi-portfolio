@@ -26,16 +26,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="bg-white/90 backdrop-blur border border-white/60 rounded-2xl p-8 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-shadow"
           >
-            <h3 className="font-display font-semibold text-ink mb-4 text-xl">
+            <h3 className="font-display font-semibold text-ink mb-4 text-2xl">
               Profile
             </h3>
-            <p className="text-charcoal leading-relaxed mb-6 font-serif">
+            <p className="text-charcoal leading-relaxed mb-8 text-[17px] font-serif">
               I am a Full Stack Developer currently pursuing my M.Tech in Computer
               Science at VIT. I enjoy designing and building robust systems — from
               backend services to clean, responsive interfaces — and I care deeply
               about writing thoughtful, maintainable code.
             </p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 items-stretch">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -43,13 +43,13 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="border border-line rounded-xl p-5 text-center bg-elevated"
+                  className="border border-line rounded-xl p-5 text-center bg-elevated flex flex-col justify-center"
                 >
                   <div className="text-3xl md:text-4xl font-display font-semibold text-ink">
                     {stat.value}
                     {stat.suffix}
                   </div>
-                  <div className="mt-2 font-mono text-xs text-charcoal">
+                  <div className="mt-2 font-mono text-sm text-charcoal">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -65,7 +65,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="bg-white/90 backdrop-blur border border-white/60 rounded-2xl p-8 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-shadow"
           >
-            <h3 className="font-display font-semibold text-ink mb-4 text-xl">
+            <h3 className="font-display font-semibold text-ink mb-4 text-2xl">
               Education
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,10 +84,10 @@ export default function About() {
                       <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" />
                     </svg>
                   </div>
-                  <div className="text-ink font-medium leading-snug">{edu.degree}</div>
-                  <div className="text-sm text-charcoal mt-1">{edu.school}</div>
-                  <div className="text-xs text-stone font-mono mt-1">{edu.year}</div>
-                  <div className="text-sm text-vermilion font-mono mt-2 font-medium">
+                  <div className="text-base font-semibold leading-snug">{edu.degree}</div>
+                  <div className="text-[15px] text-charcoal mt-1">{edu.school}</div>
+                  <div className="text-sm text-stone font-mono mt-1">{edu.year}</div>
+                  <div className="text-base text-vermilion font-mono mt-2 font-medium">
                     {edu.detail}
                   </div>
                 </motion.div>
@@ -104,12 +104,12 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="bg-white/90 backdrop-blur border border-white/60 rounded-2xl p-8 shadow-xl shadow-black/5"
         >
-          <h4 className="font-mono text-xs uppercase tracking-widest text-stone mb-6">
+          <h4 className="font-mono text-sm uppercase tracking-widest text-stone mb-6">
             Technologies
           </h4>
           <div className="flex flex-wrap gap-2.5">
             {techLogos.map((t) => (
-              <TechIcon key={t} name={t} size={30} />
+              <TechIcon key={t} name={t} size={32} />
             ))}
           </div>
         </motion.div>

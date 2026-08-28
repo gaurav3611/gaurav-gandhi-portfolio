@@ -61,7 +61,7 @@ export default function Hero() {
             <h2 className="text-white/85 text-xl sm:text-2xl font-light">
               M.Tech Computer Science @ VIT — building robust, elegant systems.
             </h2>
-            <p className="mt-4 text-white/70 max-w-xl leading-relaxed font-serif">
+            <p className="mt-4 text-white/75 text-lg max-w-xl leading-relaxed font-serif">
               {hero.description}
             </p>
           </motion.div>

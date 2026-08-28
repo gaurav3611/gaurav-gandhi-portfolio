@@ -30,14 +30,14 @@ export default function Skills() {
               className="group bg-white/90 backdrop-blur border border-white/60 rounded-2xl p-6 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-lg font-bold text-vermilion">✦</span>
-                <h3 className="text-lg font-bold text-ink font-display">
+                <span className="text-2xl font-bold text-vermilion">✦</span>
+                <h3 className="text-xl font-bold text-ink font-display">
                   {group.category}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {group.skills.map((skill) => (
-                  <TechIcon key={skill} name={skill} size={26} />
+                  <TechIcon key={skill} name={skill} size={30} />
                 ))}
               </div>
             </motion.div>
