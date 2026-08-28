@@ -166,21 +166,24 @@ h6 {
   z-index: 98;
 }
 
-/* Sakura petal */
-.sakura-petal {
+/* Bamboo shard cut by katana */
+.bamboo-shard {
   position: absolute;
-  top: -10%;
   will-change: transform, opacity;
-  animation: sakura-fall linear forwards;
+  background: linear-gradient(180deg, #4a7a4a, #2a5a2a);
+  border-radius: 2px;
+  border: 1px solid rgba(74, 122, 74, 0.35);
+  box-shadow: 0 0 20px rgba(74, 122, 74, 0.3);
+  animation: bamboo-fly cubic-bezier(0.77, 0, 0.18, 1) forwards;
 }
 
-@keyframes sakura-fall {
+@keyframes bamboo-fly {
   0% {
-    transform: translate(0, -10%) rotate(0deg) scale(1);
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.3);
     opacity: 1;
   }
   100% {
-    transform: translate(var(--tx, 60px), var(--ty, 110vh)) rotate(720deg) scale(0.3);
+    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) rotate(var(--rot, 0deg)) scale(1);
     opacity: 0;
   }
 }

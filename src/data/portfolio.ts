@@ -63,7 +63,7 @@ export const education: Education[] = [
     degree: "M.Tech, Computer Science",
     school: "VIT University",
     year: "Expected May 2028",
-    detail: "CGPA 7.51",
+    detail: "CGPA 7.72",
   },
   {
     degree: "Pre-University (XII)",
@@ -77,7 +77,7 @@ export const experiences: Experience[] = [
   {
     company: "FinFactor",
     role: "Software Developer Intern",
-    location: "Remote",
+    location: "Bengaluru, India (On-site)",
     start: "May 2025",
     end: "June 2025",
     duration: "May 2025 – June 2025",
@@ -180,7 +180,7 @@ export const achievements: Achievement[] = [
   {
     icon: "📊",
     title: "Academic Standing",
-    subtitle: "M.Tech CSE @ VIT with a CGPA of 7.51.",
+    subtitle: "M.Tech CSE @ VIT with a CGPA of 7.72.",
   },
   {
     icon: "🎯",

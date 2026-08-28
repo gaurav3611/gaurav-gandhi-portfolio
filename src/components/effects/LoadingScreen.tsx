@@ -12,8 +12,16 @@ export default function LoadingScreen({
     "black"
   );
   const [done, setDone] = useState(false);
-  const [petals, setPetals] = useState<
-    { id: number; left: number; delay: number; size: number; tx: number }[]
+  const [bamboo, setBamboo] = useState<
+    {
+      id: number;
+      left: number;
+      top: number;
+      size: number;
+      tx: number;
+      ty: number;
+      rot: number;
+    }[]
   >([]);
 
   useEffect(() => {
@@ -31,14 +39,21 @@ export default function LoadingScreen({
 
     timers.push(
       setTimeout(() => {
-        const arr = Array.from({ length: 50 }, (_, i) => ({
-          id: i,
-          left: Math.random() * 100,
-          delay: Math.random() * 3,
-          size: Math.random() * 24 + 12,
-          tx: (Math.random() - 0.5) * 300,
-        }));
-        setPetals(arr);
+        const arr = Array.from({ length: 36 }, (_, i) => {
+          const angle = -45 + Math.random() * 90;
+          const rad = (angle * Math.PI) / 180;
+          const distance = 260 + Math.random() * 420;
+          return {
+            id: i,
+            left: 50,
+            top: 50,
+            size: Math.random() * 30 + 18,
+            tx: Math.cos(rad) * distance * (0.5 + Math.random() * 0.5),
+            ty: Math.sin(rad) * distance * (0.5 + Math.random() * 0.5),
+            rot: (Math.random() - 0.5) * 720,
+          };
+        });
+        setBamboo(arr);
       }, 1500)
     );
 
@@ -120,23 +135,24 @@ export default function LoadingScreen({
             />
           )}
 
-          {/* Sakura petals */}
+          {/* Bamboo shards cut by the katana */}
           <div className="absolute inset-0 pointer-events-none z-[40]">
-            {petals.map((p) => (
+            {bamboo.map((p) => (
               <span
                 key={p.id}
-                className="sakura-petal"
+                className="bamboo-shard"
                 style={{
                   left: `${p.left}%`,
-                  fontSize: `${p.size}px`,
-                  animationDelay: `${p.delay}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`,
+                  top: `${p.top}%`,
+                  width: `${p.size}px`,
+                  height: `${p.size * (0.5 + Math.random() * 0.5)}px`,
+                  animationDuration: `${1 + Math.random() * 0.8}s`,
+                  animationDelay: `${(Math.random() * 0.3).toFixed(2)}s`,
                   ["--tx" as string]: `${p.tx}px`,
-                  ["--ty" as string]: `${60 + Math.random() * 50}vh`,
+                  ["--ty" as string]: `${p.ty}px`,
+                  ["--rot" as string]: `${p.rot}deg`,
                 }}
-              >
-                🌸
-              </span>
+              />
             ))}
           </div>
 
