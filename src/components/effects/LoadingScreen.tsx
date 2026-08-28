@@ -12,7 +12,7 @@ export default function LoadingScreen({
     "black"
   );
   const [done, setDone] = useState(false);
-  const [bamboo, setBamboo] = useState<
+  const [petals, setPetals] = useState<
     {
       id: number;
       left: number;
@@ -23,6 +23,9 @@ export default function LoadingScreen({
       rot: number;
     }[]
   >([]);
+  const [kanji, setKanji] = useState<{ id: number; left: number; top: number; char: string; size: number }[]>(
+    []
+  );
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -47,14 +50,29 @@ export default function LoadingScreen({
             id: i,
             left: 50,
             top: 50,
-            size: Math.random() * 30 + 18,
+            size: Math.random() * 14 + 8,
             tx: Math.cos(rad) * distance * (0.5 + Math.random() * 0.5),
             ty: Math.sin(rad) * distance * (0.5 + Math.random() * 0.5),
             rot: (Math.random() - 0.5) * 720,
           };
         });
-        setBamboo(arr);
+        setPetals(arr);
       }, 1500)
+    );
+
+    timers.push(
+      setTimeout(() => {
+        const chars = ["侍", "魂", "道", "心", "剣", "禅"];
+        setKanji(
+          chars.map((char, i) => ({
+            id: i,
+            char,
+            left: 10 + Math.random() * 80,
+            top: 10 + Math.random() * 80,
+            size: 40 + Math.random() * 60,
+          }))
+        );
+      }, 600)
     );
 
     return () => {
@@ -135,17 +153,38 @@ export default function LoadingScreen({
             />
           )}
 
-          {/* Bamboo shards cut by the katana */}
+          {/* Floating kanji background */}
+          <div className="absolute inset-0 pointer-events-none z-[15]">
+            {kanji.map((k) => (
+              <span
+                key={k.id}
+                className="floating-kanji"
+                style={{
+                  position: "absolute",
+                  left: `${k.left}%`,
+                  top: `${k.top}%`,
+                  fontSize: `${k.size}px`,
+                  color: "rgba(255,255,255,0.04)",
+                  fontFamily: "inherit",
+                  animationDelay: `${(Math.random() * 4).toFixed(2)}s`,
+                }}
+              >
+                {k.char}
+              </span>
+            ))}
+          </div>
+
+          {/* Sakura petals cut by the katana */}
           <div className="absolute inset-0 pointer-events-none z-[40]">
-            {bamboo.map((p) => (
+            {petals.map((p) => (
               <span
                 key={p.id}
-                className="bamboo-shard"
+                className="sakura-petal"
                 style={{
                   left: `${p.left}%`,
                   top: `${p.top}%`,
                   width: `${p.size}px`,
-                  height: `${p.size * (0.5 + Math.random() * 0.5)}px`,
+                  height: `${p.size * 1.4}px`,
                   animationDuration: `${1 + Math.random() * 0.8}s`,
                   animationDelay: `${(Math.random() * 0.3).toFixed(2)}s`,
                   ["--tx" as string]: `${p.tx}px`,

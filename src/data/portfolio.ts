@@ -94,7 +94,7 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const projectCategories = ["All", "Full Stack", "IoT", "Distributed", "ML"];
+export const projectCategories = ["All", "Full Stack", "IoT", "Distributed"];
 
 export const projects: Project[] = [
   {
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     category: "Full Stack",
     tech: ["MongoDB", "Express", "React", "Node.js", "IPFS"],
     status: "completed",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&h=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/ipfs-cancer-ehr",
     demo: "https://ipfs-ehr.demo.com",
   },
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     category: "IoT",
     tech: ["ESP32", "MPU6050", "BLE", "Three.js", "Firebase", "Flask"],
     status: "completed",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&h=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/iot-cricket-swing",
     demo: "https://swing-analyzer.demo.com",
   },
@@ -144,18 +144,6 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/distributed-ecommerce",
     demo: "https://ecommerce.demo.com",
-  },
-  {
-    id: "ml-churn-prediction",
-    title: "ML Churn Prediction",
-    description:
-      "Machine learning model that predicts customer churn with feature engineering and model evaluation.",
-    category: "ML",
-    tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
-    status: "completed",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&h=600&auto=format&fit=crop",
-    github: "https://github.com/gaurav3611/ml-churn-prediction",
-    demo: "https://churn-ml.demo.com",
   },
 ];
 

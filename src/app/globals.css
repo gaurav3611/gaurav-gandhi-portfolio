@@ -166,26 +166,50 @@ h6 {
   z-index: 98;
 }
 
-/* Bamboo shard cut by katana */
-.bamboo-shard {
+/* Sakura petal released by the katana cut */
+.sakura-petal {
   position: absolute;
   will-change: transform, opacity;
-  background: linear-gradient(180deg, #4a7a4a, #2a5a2a);
-  border-radius: 2px;
-  border: 1px solid rgba(74, 122, 74, 0.35);
-  box-shadow: 0 0 20px rgba(74, 122, 74, 0.3);
-  animation: bamboo-fly cubic-bezier(0.77, 0, 0.18, 1) forwards;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffd7e8 0%,
+    #ffb3cf 40%,
+    #ff8fb8 100%
+  );
+  border-radius: 75% 25% 75% 25% / 60% 40% 60% 40%;
+  box-shadow: 0 0 12px rgba(255, 143, 184, 0.45);
+  animation: sakura-fly cubic-bezier(0.77, 0, 0.18, 1) forwards;
 }
 
-@keyframes bamboo-fly {
+@keyframes sakura-fly {
   0% {
-    transform: translate(-50%, -50%) rotate(45deg) scale(0.3);
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.4);
     opacity: 1;
   }
   100% {
-    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) rotate(var(--rot, 0deg)) scale(1);
+    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px))) rotate(var(--rot, 0deg)) scale(1.1);
     opacity: 0;
   }
+}
+
+/* Floating kanji background */
+@keyframes float-kanji {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -20px) rotate(2deg);
+  }
+  75% {
+    transform: translate(-10px, 20px) rotate(-2deg);
+  }
+}
+
+.floating-kanji {
+  animation: float-kanji 8s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Katana slash */
