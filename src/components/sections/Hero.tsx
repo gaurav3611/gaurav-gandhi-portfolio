@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Magnetic from "@/components/ui/Magnetic";
-import TempleScene from "@/components/three/TempleScene";
 import { hero } from "@/data/portfolio";
 
 const container = {
@@ -30,15 +29,8 @@ export default function Hero() {
     <section
       data-section="hero"
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center"
     >
-      {/* 3D temple background */}
-      <div className="absolute inset-0 z-[1]">
-        <TempleScene />
-      </div>
-      {/* Readability overlay */}
-      <div className="absolute inset-0 z-[2] bg-black/40" />
-
       <div className="max-w-screen-2xl w-full mx-auto px-6 sm:px-10 lg:px-16 py-28 relative z-10">
         <motion.div
           variants={container}

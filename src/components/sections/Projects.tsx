@@ -6,13 +6,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TechIcon from "@/components/ui/TechIcon";
 import { projects, projectCategories } from "@/data/portfolio";
 
-const categoryEmoji: Record<string, string> = {
-  "Full Stack": "🛠️",
-  IoT: "📡",
-  Distributed: "🌐",
-  ML: "🧠",
-};
-
 const categoryGradient: Record<string, string> = {
   "Full Stack": "from-vermilion/20 via-vermilion/5 to-transparent",
   IoT: "from-bamboo/25 via-bamboo/5 to-transparent",
@@ -81,11 +74,15 @@ export default function Projects() {
                 <div
                   className={`relative h-44 bg-gradient-to-br ${categoryGradient[project.category]} overflow-hidden`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl drop-shadow-sm transition-transform duration-500 group-hover:scale-125">
-                      {categoryEmoji[project.category]}
-                    </span>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
                   <span className="absolute top-3 right-3 text-xs font-mono uppercase tracking-wider bg-black/60 text-white px-2.5 py-1 rounded-md">
                     {project.category}
                   </span>

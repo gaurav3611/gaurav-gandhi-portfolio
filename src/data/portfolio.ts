@@ -19,6 +19,7 @@ export interface Project {
   status: "completed" | "in-progress";
   github: string;
   demo?: string;
+  image: string;
 }
 
 export interface SkillGroup {
@@ -104,6 +105,7 @@ export const projects: Project[] = [
     category: "Full Stack",
     tech: ["Java", "JDBC", "MySQL"],
     status: "completed",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/automate-hub",
     demo: "https://automate-hub.demo.com",
   },
@@ -115,6 +117,7 @@ export const projects: Project[] = [
     category: "Full Stack",
     tech: ["MongoDB", "Express", "React", "Node.js", "IPFS"],
     status: "completed",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/ipfs-cancer-ehr",
     demo: "https://ipfs-ehr.demo.com",
   },
@@ -126,6 +129,7 @@ export const projects: Project[] = [
     category: "IoT",
     tech: ["ESP32", "MPU6050", "BLE", "Three.js", "Firebase", "Flask"],
     status: "completed",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/iot-cricket-swing",
     demo: "https://swing-analyzer.demo.com",
   },
@@ -137,6 +141,7 @@ export const projects: Project[] = [
     category: "Distributed",
     tech: ["Spring Boot", "React", "Hadoop", "ZooKeeper"],
     status: "completed",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/distributed-ecommerce",
     demo: "https://ecommerce.demo.com",
   },
@@ -148,6 +153,7 @@ export const projects: Project[] = [
     category: "ML",
     tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
     status: "completed",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&h=600&auto=format&fit=crop",
     github: "https://github.com/gaurav3611/ml-churn-prediction",
     demo: "https://churn-ml.demo.com",
   },
