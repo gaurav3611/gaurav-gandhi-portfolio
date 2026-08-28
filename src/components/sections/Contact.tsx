@@ -14,7 +14,7 @@ import { contactInfo, socialsFull } from "@/data/contact";
 
 const contactItems = [
   { label: "Email", value: contactInfo.email, href: `mailto:${contactInfo.email}`, icon: EmailIcon },
-  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone}`, icon: PhoneIcon },
+  { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone.replace(/[\s-]/g, "")}`, icon: PhoneIcon },
   { label: "Location", value: contactInfo.location, href: undefined, icon: LocationIcon },
 ];
 

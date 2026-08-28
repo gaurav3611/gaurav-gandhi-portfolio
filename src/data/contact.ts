@@ -23,31 +23,7 @@ export const socialsFull: SocialLink[] = [
   {
     label: "LinkedIn",
     handle: "Gaurav Gandhi",
-    href: "https://linkedin.com/in/Gaurav-gandhi",
+    href: "https://www.linkedin.com/in/gaurav-gandhi-700a8a29a/",
     icon: "linkedin",
-  },
-  {
-    label: "Twitter",
-    handle: "@gaurav3611",
-    href: "https://twitter.com/gaurav3611",
-    icon: "twitter",
-  },
-  {
-    label: "Instagram",
-    handle: "@gaurav3611",
-    href: "https://instagram.com/gaurav3611",
-    icon: "instagram",
-  },
-  {
-    label: "YouTube",
-    handle: "@gaurav3611",
-    href: "https://youtube.com/@gaurav3611",
-    icon: "youtube",
-  },
-  {
-    label: "Website",
-    handle: "gauravgandhi.dev",
-    href: "https://gauravgandhi.dev",
-    icon: "globe",
   },
 ];
