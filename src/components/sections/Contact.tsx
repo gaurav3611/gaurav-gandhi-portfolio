@@ -7,7 +7,6 @@ import Magnetic from "@/components/ui/Magnetic";
 import {
   EmailIcon,
   PhoneIcon,
-  LocationIcon,
   SocialIcon,
 } from "@/components/icons";
 import { contactInfo, socialsFull } from "@/data/contact";
@@ -15,7 +14,6 @@ import { contactInfo, socialsFull } from "@/data/contact";
 const contactItems = [
   { label: "Email", value: contactInfo.email, href: `mailto:${contactInfo.email}`, icon: EmailIcon },
   { label: "Phone", value: contactInfo.phone, href: `tel:${contactInfo.phone.replace(/[\s-]/g, "")}`, icon: PhoneIcon },
-  { label: "Location", value: contactInfo.location, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.location)}`, icon: LocationIcon },
 ];
 
 export default function Contact() {
@@ -63,7 +61,7 @@ export default function Contact() {
             </p>
 
             {/* Icon-only contact actions — evenly aligned, equal height */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8 max-w-3xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-3xl">
               {contactItems.map((item) => {
                 const Wrapper = item.href ? "a" : "div";
                 return (
