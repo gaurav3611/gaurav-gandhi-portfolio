@@ -78,7 +78,7 @@ export const experiences: Experience[] = [
   {
     company: "FinFactor",
     role: "Software Developer Intern",
-    location: "Bengaluru, India (On-site)",
+    location: "Pune, India (On-site)",
     start: "May 2025",
     end: "June 2025",
     duration: "May 2025 – June 2025",
